@@ -16,6 +16,47 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+	constructor() {
+		this.result = 0;
+	}
+
+	add(num) {
+		this.result += num;
+	}
+
+	subtract(num) {
+		this.result -= num;
+	}
+
+	multiply(num) {
+		this.result *= num;
+	}
+
+	divide(num) {
+		this.result /= num;
+	}
+
+	clear() {
+		this.result = 0;
+	}
+
+	getResult() {
+		return this.result;
+	}
+
+	_removeWhitespaces(expr) {
+		return expr.replace(/\s/g, '');
+	}
+
+	calculate(expr) {
+		let whitespaceRemovedExpr = this._removeWhitespaces(expr);
+		console.log("expr", expr);
+		console.log("whitespaceRemovedExpr", whitespaceRemovedExpr);
+
+		// TODO: implement this
+		// ik how to do it but too lazy to implement rn
+	}
+}
 
 module.exports = Calculator;
