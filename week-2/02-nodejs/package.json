@@ -7,13 +7,15 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "test-fileServer": "./node_modules/jest/bin/jest.js ./tests/fileServer.test.js",
         "test-todoServer": "./node_modules/jest/bin/jest.js ./tests/todoServer.test.js",
-        "format": "npx prettier . --write"
+        "format": "npx prettier . --write",
+        "dev": "nodemon index.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "jest": "^29.5.0",
+        "nodemon": "^3.0.2",
         "prettier": "3.1.1",
         "supertest": "^6.3.3"
     },
