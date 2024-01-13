@@ -39,11 +39,21 @@
 
   Testing the server - run `npm run test-todoServer` command in terminal
  */
-  const express = require('express');
-  const bodyParser = require('body-parser');
-  
-  const app = express();
-  
-  app.use(bodyParser.json());
-  
-  module.exports = app;
+const express = require('express')
+const bodyParser = require('body-parser')
+
+const { getTodos, getTodoById, createTodo, updateTodoById, deleteTodoById } = require('./controllers/todosController')
+
+const app = express()
+
+app.use(bodyParser.json())
+
+app.get('/todos', getTodos)
+app.get('/todos/:id', getTodoById)
+app.post('/todos', createTodo)
+app.put('/todos/:id', updateTodoById)
+app.delete('/todos/:id', deleteTodoById)
+
+app.use(bodyParser.json())
+
+module.exports = app
